@@ -55,6 +55,15 @@ On Linux, build the `.deb`, `.rpm`, and AppImage packages together:
 npm run build:linux
 ```
 
+Release packages use the manual **Build Linux packages** workflow in GitHub
+Actions. It builds on Ubuntu 22.04 so Tauri can bundle the GStreamer files that
+WebKitGTK needs for audio playback.
+
+Open the repository's Actions tab, select **Build Linux packages**, and run the
+workflow. Download `piko-linux-x86_64` after the job finishes. The artifact
+contains the `.deb`, `.rpm`, and AppImage packages. The workflow does not create
+or publish a GitHub Release.
+
 ## Using it
 
 Open a file with the folder button in the toolbar, with `Ctrl + O`, or by dropping a `.mid` file onto the window. The view frames the song vertically, so the notes are on screen without scrolling to find them.
