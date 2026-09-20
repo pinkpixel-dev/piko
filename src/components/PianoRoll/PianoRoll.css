@@ -1,0 +1,35 @@
+.piano-roll {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  background: var(--roll-bg);
+}
+
+.piano-roll__ruler-row {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.piano-roll__ruler-spacer {
+  width: var(--keyboard-width);
+  flex: 0 0 var(--keyboard-width);
+  background: var(--surface-raised);
+  border-right: 1px solid var(--line-default);
+  border-bottom: 1px solid var(--line-default);
+}
+
+.piano-roll__body {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.piano-roll__viewport {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  overflow: hidden;
+}

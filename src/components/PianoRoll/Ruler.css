@@ -1,0 +1,53 @@
+.ruler {
+  position: relative;
+  height: var(--ruler-height);
+  /*
+   * The ruler sits in a horizontal flex row next to the keyboard spacer, so
+   * flex-basis here controls its width, not its height. It must stretch to
+   * fill the row; the height is set explicitly above.
+   */
+  flex: 1 1 auto;
+  min-width: 0;
+  background: var(--surface-raised);
+  border-bottom: 1px solid var(--line-default);
+  overflow: hidden;
+  cursor: text;
+  touch-action: none;
+}
+
+.ruler__mark {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--line-subtle);
+}
+
+.ruler__mark[data-labelled] {
+  background: var(--line-strong);
+}
+
+.ruler__label {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--text-2xs);
+  color: var(--text-muted);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.ruler__loop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--loop-region);
+  border-left: 2px solid var(--loop-edge);
+  border-right: 2px solid var(--loop-edge);
+  opacity: 0.55;
+}
+
+.ruler__loop[data-enabled] {
+  opacity: 1;
+}

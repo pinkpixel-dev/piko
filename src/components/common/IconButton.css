@@ -1,0 +1,106 @@
+.icon-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  background: transparent;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.icon-button[data-size="sm"] {
+  width: 26px;
+  height: 26px;
+}
+
+.icon-button[data-size="md"] {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-button[data-size="lg"] {
+  width: 40px;
+  height: 40px;
+}
+
+/*
+ * A coarse pointer needs a target of about 44px. The button keeps its drawn
+ * size and grows its hit area outward instead, so the layout stays identical
+ * between a desktop and a touchscreen.
+ */
+@media (pointer: coarse) {
+  .icon-button::after {
+    content: "";
+    position: absolute;
+    inset: 50% auto auto 50%;
+    width: var(--tap-target);
+    height: var(--tap-target);
+    transform: translate(-50%, -50%);
+  }
+}
+
+.icon-button:hover:not(:disabled) {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+.icon-button:active:not(:disabled) {
+  background: var(--surface-active);
+}
+
+.icon-button:disabled {
+  color: var(--text-disabled);
+}
+
+.icon-button[data-active] {
+  background: var(--surface-active);
+  color: var(--text-primary);
+}
+
+.icon-button[data-active][data-tone="accent"] {
+  color: var(--accent);
+}
+
+.icon-button[data-active][data-tone="mute"] {
+  color: var(--mute);
+}
+
+.icon-button[data-active][data-tone="solo"] {
+  color: var(--solo);
+}
+
+.icon-button[data-tone="danger"]:hover:not(:disabled) {
+  color: var(--danger);
+}
+
+/*
+ * Rendered into document.body, so it is never clipped by a scrolling panel and
+ * never lands underneath a neighbouring one.
+ */
+.icon-tooltip {
+  position: fixed;
+  z-index: 100;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-overlay);
+  border: 1px solid var(--line-default);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  font-size: var(--text-2xs);
+  line-height: 1.4;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: var(--shadow-popover);
+}
+
+.icon-tooltip[data-placement="bottom"] {
+  transform: translateX(-50%);
+}
+
+.icon-tooltip[data-placement="top"] {
+  transform: translate(-50%, -100%);
+}

@@ -1,0 +1,102 @@
+.shortcuts__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  background: oklch(0.1 0.005 265 / 0.7);
+}
+
+.shortcuts {
+  display: flex;
+  flex-direction: column;
+  width: min(760px, 100%);
+  max-height: min(720px, 88vh);
+  background: var(--surface-base);
+  border: 1px solid var(--line-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-popover);
+  overflow: hidden;
+}
+
+.shortcuts__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--line-subtle);
+}
+
+.shortcuts__header h2 {
+  font-size: var(--text-md);
+}
+
+.shortcuts__body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: var(--space-4);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-5);
+  align-content: start;
+}
+
+.shortcuts__group h3 {
+  margin-bottom: var(--space-2);
+  font-size: var(--text-2xs);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.shortcuts__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-1) 0;
+  border-bottom: 1px solid var(--line-subtle);
+}
+
+.shortcuts__item dt {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.shortcuts__item dd {
+  flex: 0 0 auto;
+}
+
+.shortcuts kbd {
+  display: inline-block;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--surface-overlay);
+  border: 1px solid var(--line-default);
+  border-bottom-width: 2px;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.shortcuts__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--line-subtle);
+  color: var(--text-disabled);
+  font-size: var(--text-2xs);
+}
+
+@media (max-width: 560px) {
+  .shortcuts__footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+}

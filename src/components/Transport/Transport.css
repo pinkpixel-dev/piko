@@ -1,0 +1,98 @@
+.transport {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  gap: var(--space-4);
+  height: var(--transport-height);
+  flex: 0 0 auto;
+  padding: 0 var(--space-4);
+  background: var(--surface-raised);
+  border-top: 1px solid var(--line-default);
+}
+
+.transport__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.transport__readout {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  white-space: nowrap;
+}
+
+.transport__time {
+  font-size: var(--text-md);
+  color: var(--text-primary);
+}
+
+.transport__duration {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+.transport__divider {
+  width: 1px;
+  height: 14px;
+  background: var(--line-default);
+  align-self: center;
+}
+
+.transport__meta {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+.transport__meta-label {
+  font-size: var(--text-2xs);
+  color: var(--text-disabled);
+}
+
+.transport__scrubber {
+  width: 100%;
+  min-width: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.transport__scrubber:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.transport__volume {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.transport__volume-slider input {
+  width: 88px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+/*
+ * On a narrow window the readout and the volume slider are the first things to
+ * go: the transport buttons and the scrubber are what actually get used.
+ */
+@media (max-width: 720px) {
+  .transport {
+    grid-template-columns: auto 1fr auto;
+    gap: var(--space-3);
+    padding: 0 var(--space-3);
+  }
+
+  .transport__readout {
+    display: none;
+  }
+
+  .transport__volume-slider {
+    display: none;
+  }
+}

@@ -1,0 +1,62 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--surface-base);
+}
+
+.app__body {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+}
+
+/* Only ever used by the narrow-screen overlay rail. */
+.app__scrim {
+  display: none;
+}
+
+/*
+ * A permanent track rail takes a third of a phone screen, which leaves too
+ * little room to actually edit. Below this width it becomes a panel that slides
+ * in over the roll from the toolbar toggle, and the roll keeps the full width.
+ */
+@media (max-width: 600px) {
+  .track-rail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 30;
+    width: min(260px, 78vw);
+    flex-basis: auto;
+    box-shadow: var(--shadow-popover);
+    transform: translateX(-100%);
+    transition: transform var(--duration-base) var(--ease-out);
+  }
+
+  .app__body[data-rail-open] .track-rail {
+    transform: translateX(0);
+  }
+
+  .app__body[data-rail-open] .app__scrim {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    background: oklch(0.1 0.005 265 / 0.5);
+  }
+
+  /* The rail is roomy again as an overlay, so the instrument name comes back. */
+  .track-row__instrument {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track-rail {
+    transition: none;
+  }
+}

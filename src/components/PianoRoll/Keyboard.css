@@ -1,0 +1,58 @@
+.keyboard {
+  position: relative;
+  width: var(--keyboard-width);
+  flex: 0 0 var(--keyboard-width);
+  height: 100%;
+  overflow: hidden;
+  background: var(--surface-sunken);
+  border-right: 1px solid var(--line-default);
+}
+
+.keyboard__key {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: var(--space-1);
+  background: var(--roll-key-white);
+  color: oklch(0.35 0.01 265);
+  border-bottom: 1px solid oklch(0.72 0.006 265);
+  font-size: var(--text-2xs);
+  font-family: var(--font-mono);
+  line-height: 1;
+  overflow: hidden;
+}
+
+.keyboard__key[data-black] {
+  background: var(--roll-key-black);
+  color: var(--text-muted);
+  border-bottom-color: oklch(0.18 0.006 265);
+  /* Black keys are drawn short, the way they sit on a real keyboard. */
+  right: 38%;
+  z-index: 1;
+}
+
+.keyboard__key:hover:not(:disabled) {
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+
+.keyboard__key:active:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.keyboard__key:disabled {
+  cursor: default;
+}
+
+.keyboard__key:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+  z-index: 2;
+}
+
+.keyboard__label {
+  pointer-events: none;
+}

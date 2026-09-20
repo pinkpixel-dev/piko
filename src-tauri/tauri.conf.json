@@ -1,0 +1,46 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "MIDI Player",
+  "version": "0.1.0",
+  "identifier": "dev.pinkpixel.midiplayer",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "MIDI Player",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 320,
+        "minHeight": 480,
+        "resizable": true,
+        "decorations": true,
+        "backgroundColor": "#17181b",
+        "dragDropEnabled": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; media-src 'self' blob:; worker-src 'self' blob:; connect-src 'self' ipc: http://ipc.localhost"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "Music",
+    "shortDescription": "MIDI player and piano-roll editor",
+    "longDescription": "Open, play, and edit MIDI files with a piano-roll editor and a bundled General MIDI soundfont.",
+    "copyright": "Copyright (c) 2026 Pink Pixel",
+    "licenseFile": "../LICENSE",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}

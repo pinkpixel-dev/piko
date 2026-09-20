@@ -1,0 +1,35 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Copied from node_modules by scripts/sync-worklet.mjs on predev and prebuild.
+# The bundled soundfont in public/soundfonts is a real asset and IS committed.
+public/worklets
+
+# Emitted by `tsc -b` for the composite config project
+*.tsbuildinfo
+vite.config.d.ts
+
+# Other
+DOCS/

@@ -1,0 +1,131 @@
+/*
+ * Design tokens. Every colour, space, and duration in the app comes from here.
+ * Colours are OKLCH so lightness stays perceptually even across hues, which
+ * matters for the track palette where eight colours must read as equally
+ * prominent.
+ */
+
+:root {
+  /* ---- Surfaces -------------------------------------------------------- */
+  /* Charcoal with a faint cool cast. Never pure black. */
+  --surface-sunken: oklch(0.145 0.006 265);
+  --surface-base: oklch(0.175 0.006 265);
+  --surface-raised: oklch(0.215 0.007 265);
+  --surface-overlay: oklch(0.245 0.008 265);
+  --surface-hover: oklch(0.275 0.009 265);
+  --surface-active: oklch(0.315 0.010 265);
+
+  /* ---- Lines ----------------------------------------------------------- */
+  --line-subtle: oklch(0.27 0.008 265);
+  --line-default: oklch(0.33 0.009 265);
+  --line-strong: oklch(0.42 0.010 265);
+
+  /* ---- Text ------------------------------------------------------------ */
+  --text-primary: oklch(0.97 0.002 265);
+  --text-secondary: oklch(0.78 0.006 265);
+  --text-muted: oklch(0.62 0.008 265);
+  --text-disabled: oklch(0.48 0.008 265);
+  --text-on-accent: oklch(0.15 0.01 265);
+
+  /* ---- Functional accents ---------------------------------------------- */
+  /* The chrome stays neutral. Colour is reserved for meaning. */
+  --accent: oklch(0.72 0.16 196);
+  --accent-hover: oklch(0.78 0.16 196);
+  --accent-muted: oklch(0.72 0.16 196 / 0.16);
+
+  --playhead: oklch(0.65 0.22 25);
+  --loop-region: oklch(0.72 0.16 196 / 0.10);
+  --loop-edge: oklch(0.72 0.16 196 / 0.55);
+
+  --danger: oklch(0.64 0.20 25);
+  --warning: oklch(0.76 0.15 75);
+  --success: oklch(0.72 0.16 152);
+
+  --solo: oklch(0.80 0.16 90);
+  --mute: oklch(0.66 0.14 25);
+
+  /* ---- Piano roll ------------------------------------------------------ */
+  --roll-bg: oklch(0.165 0.006 265);
+  --roll-row-black: oklch(0.145 0.006 265);
+  --roll-line-beat: oklch(0.235 0.007 265);
+  --roll-line-bar: oklch(0.32 0.009 265);
+  --roll-line-octave: oklch(0.29 0.008 265);
+  --roll-key-white: oklch(0.86 0.004 265);
+  --roll-key-black: oklch(0.23 0.006 265);
+
+  /*
+   * Track palette. Eight hues at matched lightness and chroma so no track
+   * shouts louder than another. Colour is never the only signal: tracks are
+   * also numbered and named, and selected notes get an outline.
+   */
+  --track-1: oklch(0.70 0.19 25);
+  --track-2: oklch(0.74 0.17 62);
+  --track-3: oklch(0.79 0.16 100);
+  --track-4: oklch(0.74 0.18 148);
+  --track-5: oklch(0.74 0.15 196);
+  --track-6: oklch(0.68 0.17 250);
+  --track-7: oklch(0.66 0.19 300);
+  --track-8: oklch(0.69 0.20 340);
+
+  /* ---- Type ------------------------------------------------------------ */
+  --font-display: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  --font-ui: "IBM Plex Sans", sans-serif;
+  --font-mono: "JetBrains Mono Variable", "JetBrains Mono", monospace;
+
+  --text-2xs: 0.6875rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+
+  /* ---- Space ----------------------------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+
+  /* ---- Radii ----------------------------------------------------------- */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-full: 999px;
+
+  /* ---- Elevation ------------------------------------------------------- */
+  /* Flat shadows for separation only. No coloured glow. */
+  --shadow-panel: 0 1px 2px oklch(0 0 0 / 0.4);
+  --shadow-popover: 0 8px 24px oklch(0 0 0 / 0.5);
+
+  /* ---- Motion ---------------------------------------------------------- */
+  /* Named transitions on transform and opacity only, never layout. */
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --duration-fast: 90ms;
+  --duration-base: 150ms;
+
+  /* ---- Layout ---------------------------------------------------------- */
+  --toolbar-height: 48px;
+  --transport-height: 60px;
+  --ruler-height: 28px;
+  --rail-width: 220px;
+  --keyboard-width: 56px;
+  --tap-target: 44px;
+}
+
+/* Touch devices get roomier hit areas without changing the visual weight. */
+@media (pointer: coarse) {
+  :root {
+    --rail-width: 200px;
+    --keyboard-width: 44px;
+    --transport-height: 68px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+  }
+}

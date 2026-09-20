@@ -1,0 +1,28 @@
+.roll-surface {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--roll-bg);
+}
+
+.roll-surface__canvas {
+  display: block;
+  /*
+   * The roll handles its own panning and zooming from pointer events, so the
+   * browser must not also scroll or pinch-zoom the page underneath.
+   */
+  touch-action: none;
+}
+
+.roll-surface__playhead {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--playhead);
+  pointer-events: none;
+  will-change: transform;
+}

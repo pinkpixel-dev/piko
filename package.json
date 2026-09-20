@@ -1,0 +1,45 @@
+{
+  "name": "midi-player",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "sync:worklet": "node scripts/sync-worklet.mjs",
+    "predev": "npm run sync:worklet",
+    "dev": "vite",
+    "prebuild": "npm run sync:worklet",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit false --emitDeclarationOnly false || tsc -b",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource-variable/space-grotesk": "^5.3.0",
+    "@fontsource/ibm-plex-sans": "^5.3.0",
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-dialog": "^2.7.3",
+    "@tauri-apps/plugin-opener": "^2",
+    "@tonejs/midi": "^2.0.28",
+    "lucide-react": "^1.47.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "spessasynth_core": "^4.3.22",
+    "spessasynth_lib": "^4.3.14",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^6.0.2",
+    "typescript": "~6.0.3",
+    "vite": "^8.0.16",
+    "vitest": "^5.0.1"
+  },
+  "description": "A desktop MIDI player and piano-roll editor.",
+  "license": "Apache-2.0",
+  "author": "Pink Pixel <admin@pinkpixel.dev>"
+}
