@@ -1,6 +1,13 @@
-# MIDI Player
+<p align="center">
+  <img src="icon.png" alt="Quota logo" width="300" height="300">
+</p>
+
+
+# Piko
 
 A desktop MIDI player and piano-roll editor. Open a `.mid` file, hear it play through a real General MIDI soundfont, and edit the notes directly on the roll.
+
+![Piko showing a multi-track MIDI arrangement in the piano-roll editor](screenshot.png)
 
 It ships with the soundfont built in, so there is nothing to download and nothing to configure. No account, no network, no telemetry. Open a file and it plays.
 
