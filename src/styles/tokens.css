@@ -58,14 +58,14 @@
    * shouts louder than another. Colour is never the only signal: tracks are
    * also numbered and named, and selected notes get an outline.
    */
-  --track-1: oklch(0.70 0.19 25);
-  --track-2: oklch(0.74 0.17 62);
-  --track-3: oklch(0.79 0.16 100);
-  --track-4: oklch(0.74 0.18 148);
-  --track-5: oklch(0.74 0.15 196);
-  --track-6: oklch(0.68 0.17 250);
-  --track-7: oklch(0.66 0.19 300);
-  --track-8: oklch(0.69 0.20 340);
+  --track-1: oklch(0.70 0.19 300);
+  --track-2: oklch(0.75 0.14 205);
+  --track-3: oklch(0.80 0.18 135);
+  --track-4: oklch(0.70 0.19 5);
+  --track-5: oklch(0.68 0.17 255);
+  --track-6: oklch(0.74 0.14 175);
+  --track-7: oklch(0.68 0.20 330);
+  --track-8: oklch(0.78 0.16 75);
 
   /* ---- Type ------------------------------------------------------------ */
   --font-display: "Space Grotesk Variable", "Space Grotesk", sans-serif;
