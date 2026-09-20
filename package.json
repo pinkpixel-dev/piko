@@ -1,7 +1,7 @@
 {
   "name": "piko",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "sync:worklet": "node scripts/sync-worklet.mjs",
@@ -9,6 +9,7 @@
     "dev": "vite",
     "prebuild": "npm run sync:worklet",
     "build": "tsc -b && vite build",
+    "build:linux": "node scripts/tauri-build.mjs --bundles deb,rpm,appimage",
     "preview": "vite preview",
     "typecheck": "tsc -b --noEmit false --emitDeclarationOnly false || tsc -b",
     "test": "vitest run",

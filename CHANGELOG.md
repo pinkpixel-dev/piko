@@ -3,6 +3,18 @@
 All notable changes to this project are recorded here. This project uses
 [semantic versioning](https://semver.org/).
 
+## 1.0.0 - September 20, 2026
+
+### 📦 Linux builds
+
+- Added one Linux build command for `.deb`, `.rpm`, and AppImage packages
+- Disabled `linuxdeploy` stripping during Linux packaging to support builds on CachyOS and other rolling-release distributions
+- Prevented AppImage startup crashes caused by bundled GIO modules on CachyOS
+
+### 🏷️ Versioning
+
+- Updated the application and package version to 1.0.0
+
 ## 0.1.0 - September 20, 2026
 
 First release.

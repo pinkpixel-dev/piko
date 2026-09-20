@@ -49,6 +49,12 @@ npm run tauri build
 
 The build writes to `src-tauri/target/release/`. Installer packages land in `src-tauri/target/release/bundle/`.
 
+On Linux, build the `.deb`, `.rpm`, and AppImage packages together:
+
+```bash
+npm run build:linux
+```
+
 ## Using it
 
 Open a file with the folder button in the toolbar, with `Ctrl + O`, or by dropping a `.mid` file onto the window. The view frames the song vertically, so the notes are on screen without scrolling to find them.

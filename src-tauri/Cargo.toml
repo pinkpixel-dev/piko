@@ -1,6 +1,6 @@
 [package]
 name = "piko"
-version = "0.1.0"
+version = "1.0.0"
 description = "A desktop MIDI player and piano-roll editor."
 authors = ["Pink Pixel <admin@pinkpixel.dev>"]
 edition = "2021"
